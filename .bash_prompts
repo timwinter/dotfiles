@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Created by twinter <twinter@cancerprev.org>
+
+function elite3 {
+local GRAD1=`tty|cut -d/ -f3`
+local COLOR1="\[\033[0;36m\]"
+local COLOR2="\[\033[1;36m\]"
+local COLOR3="\[\033[1;30m\]"
+local COLOR4="\[\033[0m\]"
+PS1="$COLOR3-$COLOR1-$COLOR2($COLOR1\u$COLOR3@$COLOR1\h$COLOR2$COLOR3:$COLOR1\$(date)$COLOR2)$COLOR1-$COLOR3-\n$COLOR3-$COLOR1-$COLOR2($COLOR1\w$COLOR4:$COLOR2)$COLOR1-$COLOR3-$COLOR4 "
+PS2="$COLOR2-$COLOR1-$COLOR3-$COLOR2"
+}
+
+
+#------------------------------------------------------
+
+function prompt_command {
+#Get a random number...
+let VAR=$[$RANDOM%7+1]
+
+# Not needed at the moment
+#if [ "$VAR" -le "0" ]
+#then
+#    let VAR=$[$VAR+3]
+#fi
+}
+
+#
+#This function changes to a random color every time you hit the enter key.
+#Created 6/20/2000 by Tim Winter <twinter@cancerprev.org>
+#
+
+function a0 {
+
+PROMPT_COMMAND=prompt_command
+
+local NORM="\[\033[0;3\${VAR}m\]"
+local BOLD="\[\033[1;3\${VAR}m\]"
+local GRAY="\[\033[0;37m\]"
+local WHITE="\[\033[1;0m\]"
+PS1="$GRAY-$NORM-$BOLD($NORM\u$GRAY@$NORM\h$GRAY:$NORM\$(date)$BOLD)$NORM-$GRAY-\n$GRAY-$NORM-$BOLD($NORM\w$GRAY:$BOLD)$NORM-$GRAY-$WHITE "
+PS2="$GRAY-$NORM-$GRAY-$WHITE "
+}
