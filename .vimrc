@@ -5,6 +5,8 @@ set ignorecase
 "map q :q<CR>
 "map w :w<CR>
 
+set bs=indent,eol,start " more powerful backspacing
+
 " Map <Alt-Backspace> to delete word in Insert mode
 imap <Esc><BS> <C-W>
 imap <A-BS> <C-W>
