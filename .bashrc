@@ -24,6 +24,8 @@ if [ "$PS1" ]; then
 		. ~/.bash_aliases
 	fi
 
+	shopt -s histappend
+
 	# Choose a prompt
 	a0
 
